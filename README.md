@@ -1,5 +1,8 @@
 # Half-One Metrics and the Vertices of the Metric Body
 
+[![DOI](https://zenodo.org/badge/1335196616.svg)](https://doi.org/10.5281/zenodo.21953234)
+[![build](https://github.com/DavidVFeldman/half-one-metrics/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidVFeldman/half-one-metrics/actions/workflows/ci.yml)
+
 David Victor Feldman (University of New Hampshire) and Eric R. Kehoe (Zoetis, Inc.)
 
 Companion repository for the paper *Half-One Metrics and the Vertices of the Metric Body:
