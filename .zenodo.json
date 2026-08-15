@@ -1,0 +1,14 @@
+{
+  "title": "Half-One Metrics and the Vertices of the Metric Body: Density, Enumeration, and Angle",
+  "description": "Paper, Lean 4 formalization, and computational verification for the fourth article of the series extracted from E. R. Kehoe's dissertation on the geometry of the metric cone and metric body. Includes the density theorem for extreme half-one metrics, the exact vertex census of the metric body through n = 6, the twin-pair deficit bound, and their formal verification.",
+  "creators": [
+    {"name": "Feldman, David Victor", "affiliation": "University of New Hampshire", "orcid": "0000-0001-6943-4833"},
+    {"name": "Kehoe, Eric R.", "affiliation": "Zoetis, Inc."}
+  ],
+  "contributors": [
+    {"name": "Aristotle (Harmonic)", "type": "Other"}
+  ],
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "keywords": ["metric cone", "metric body", "extreme points", "half-one metrics", "Lean 4", "formal verification", "polytopes"]
+}

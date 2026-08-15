@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper."
+title: "Half-One Metrics and the Vertices of the Metric Body: Density, Enumeration, and Angle"
+authors:
+  - family-names: Feldman
+    given-names: David Victor
+    orcid: "https://orcid.org/0000-0001-6943-4833"
+    affiliation: "University of New Hampshire"
+  - family-names: Kehoe
+    given-names: Eric R.
+    affiliation: "Zoetis, Inc."
+license: Apache-2.0
+repository-code: "https://github.com/DavidVFeldman/half-one-metrics"
