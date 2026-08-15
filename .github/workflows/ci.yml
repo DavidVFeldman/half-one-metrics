@@ -5,6 +5,7 @@ on:
 jobs:
   lean:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     defaults: { run: { working-directory: lean } }
     steps:
       - uses: actions/checkout@v4
