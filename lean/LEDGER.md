@@ -227,3 +227,18 @@ or the round's base must be stated in the commission.
 Baseline (`propext`, `Classical.choice`, `Quot.sound`): everything, except
 `census6`, `census7`, `census6_good`, `census7_good`, which add `Lean.ofReduceBool` and
 `Lean.trustCompiler` (`native_decide`). No `sorryAx` anywhere in the tree.
+
+## CI incident, first push
+
+The Actions run was SIGTERM-killed (exit 143) at ~3 m 24 s, immediately after
+`HalfOne.Round6` built and as `HalfOne.Census` started: the kernel `decide` of `census5`
+over the original `Finset`/`Multiset.pi` enumeration exhausted the runner's memory
+(locally it ran in 337 s, memory unrecorded; standard runners have far less headroom).
+Everything before Census built green, with lint warnings only.
+
+Repair: `Census.lean` now routes all four counts through `census_eq_fast` — for n = 4, 5
+this adopts `attic/K5.lean` verbatim (kernel `decide` on the bitmask loop), and n = 6 moves
+onto the bridge as well (still `native_decide`, disclosure unchanged). Axiom map unchanged.
+Pre-authorized fallback if `census5` still exceeds the runner: `native_decide` it and move
+it to the disclosure list. The CI job also gained `timeout-minutes: 120` so a slow-but-
+converging kernel check is not mistaken for a hang.
