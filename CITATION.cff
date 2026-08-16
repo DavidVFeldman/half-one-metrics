@@ -10,5 +10,6 @@ authors:
     given-names: Eric R.
     affiliation: "Zoetis, Inc."
 license: Apache-2.0
+version: "1.1"
 repository-code: "https://github.com/DavidVFeldman/half-one-metrics"
 doi: 10.5281/zenodo.21953234

@@ -18,6 +18,21 @@ jobs:
         run: lake exe cache get
       - name: build
         run: lake build
-      - name: no sorries
+      - name: axiom audit
         run: |
-          ! grep -rn --include='*.lean' -e 'sorry' HalfOne HalfOne.lean
+          lake env lean HalfOne/AxiomCheck.lean > axioms.txt 2>&1
+          cat axioms.txt
+          if grep -q "sorryAx" axioms.txt; then
+            echo "FAIL: sorryAx present"; exit 1
+          fi
+          BAD=$(sed -n "s/.*depends on axioms: \[\(.*\)\]/\1/p" axioms.txt \
+            | tr ',' '\n' | tr -d ' ' | sort -u \
+            | grep -vE '^(propext|Classical\.choice|Quot\.sound|Lean\.ofReduceBool|Lean\.trustCompiler)$' || true)
+          if [ -n "$BAD" ]; then
+            echo "FAIL: unexpected axioms:"; echo "$BAD"; exit 1
+          fi
+          STRAY=$(grep "Lean.ofReduceBool" axioms.txt | grep -vE "census6|census7" || true)
+          if [ -n "$STRAY" ]; then
+            echo "FAIL: compiler axiom outside census6/census7:"; echo "$STRAY"; exit 1
+          fi
+          echo "axiom audit clean"

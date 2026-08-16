@@ -32,16 +32,21 @@ Density, Enumeration, and Angle}}
 
 \author{David Victor Feldman\\
 \small Department of Mathematics and Statistics\\
-\small University of New Hampshire
+\small University of New Hampshire\\
+\small \texttt{dvfinnh@gmail.com}
 \and
 Eric R.\ Kehoe\\
 \small Zoetis, Inc.\\
 \small Fort Collins, Colorado}
 
-\date{}
+\date{August 2026}
 
 \begin{document}
 \maketitle
+\let\thefootnote\relax\footnotetext{\textit{2020 Mathematics Subject
+Classification.} Primary 52B12; Secondary 52B05, 05C22, 05C80, 60C05, 68V20.\\
+\textit{Key words and phrases.} Metric cone, metric body, extreme points, half-one
+metrics, random graphs, formal verification, Lean~4.}
 
 \begin{abstract}
 A half-one metric on $n$ points is a bounded-by-$1$ pseudometric taking only the values
@@ -115,8 +120,8 @@ cone met with the unit sphere. Section~\ref{sec:angles} reports the experiment o
 $5\leq n\leq40$: partition metrics dominate through $n\approx12$, the half-one share
 crosses theirs near $n=18$, and reaches $1$ by $n=40$. The Gauss--Bonnet conjecture
 (Conjecture~\ref{conj:gb}) asserts that half-ones carry asymptotically all of the
-exterior angle. A range stopping at $n=10$ sees none of this, which is worth recording
-because such a range has been read as evidence against the trend.
+exterior angle. A range stopping at $n=10$ sees none of this; such a range has been read
+as evidence against the trend.
 
 \smallskip
 That (i) is a theorem, (iii) a conjecture, and (ii) neither---and that (ii)'s numbers do
@@ -151,8 +156,7 @@ criterion and then executed inside the proof assistant, by kernel reduction for 
 and by the compiled evaluator (Lean's \texttt{native\_decide}, which enlarges the trusted
 base by the compiler) for $n=6,7$. The criterion itself
 (Theorem~\ref{thm:criterion}) is the companion paper's theorem and is quoted, not
-reproved: the formal census counts graphs satisfying the combinatorial predicate. One
-observation surfaced by the formalization is worth recording: in
+reproved: the formal census counts graphs satisfying the combinatorial predicate. In
 Proposition~\ref{prop:descent}, positive definiteness is not needed for the pullback
 direction---the pullback of any vertex along any quotient map is a vertex, the zero
 coordinates pinning every perturbation to a pullback; positive definiteness is what makes
@@ -832,7 +836,7 @@ Question~\ref{q:share} asks about their share of the vertices, where the evidenc
 equivocal. The first is proved, the second observed, the third open, and the fourth may
 have a different answer from the third.
 
-A reduction worth recording: the total angle carried by non-half-one vertices is at most
+A reduction: the total angle carried by non-half-one vertices is at most
 the number of such vertices times the maximal angle at one of them, so any subexponential
 bound on the maximal exterior angle at a non-half-one vertex, combined with a bound on
 $|\ex(\bM_n)|$, would bear on Conjecture~\ref{conj:gb}. Proving it appears to require
@@ -890,7 +894,7 @@ M.M.~Deza and M.~Laurent, \textit{Geometry of Cuts and Metrics}, Springer-Verlag
 Berlin--Heidelberg, 1997.
 
 \bibitem{FK-cone}
-D.V.~Feldman and E.R.~Kehoe, Extreme rays of the metric cone and the metric body: bowtie
+D.~V.~Feldman and E.~R.~Kehoe, Extreme rays of the metric cone and the metric body: bowtie
 metrics and half-one extremality, companion paper; the results quoted here also appear as
 \cite[Ch.~2--4]{Kehoe19}.
 
