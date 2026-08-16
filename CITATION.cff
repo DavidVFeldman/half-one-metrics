@@ -8,6 +8,7 @@ authors:
     affiliation: "University of New Hampshire"
   - family-names: Kehoe
     given-names: Eric R.
+    email: eric.kehoe@proton.me
     affiliation: "Zoetis, Inc."
 license: Apache-2.0
 version: "1.1"
